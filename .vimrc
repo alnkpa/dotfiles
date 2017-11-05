@@ -1,8 +1,12 @@
-execute pathogen#infect()
-call pathogen#helptags()
+syntax enable
 colorscheme solarized
 
-let mapleader=","
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
 set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
@@ -18,3 +22,24 @@ filetype plugin indent on
 "
 xnoremap <  <gv
 xnoremap >  >gv
+
+call plug#begin()
+Plug '/usr/share/vim/vimfiles/plugin/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'dyng/ctrlsf.vim'
+Plug 'powerline/powerline', { 'rtp': 'powerline/bindings/vim' }
+Plug 'ap/vim-buftabline'
+Plug 'Raimondi/delimitMate'
+call plug#end()
+
+nnoremap <silent> t :FZF<CR>
+nnoremap <silent> <C-b> :Gblame<CR>
+nnoremap <C-f> :CtrlSF 
+vnoremap <silent> <C-f> :<BS><BS><BS><BS><BS>CtrlSF <C-R>*<CR>
+let g:ctrlsf_default_root='project'
+set laststatus=2
+
+set hidden
+nnoremap gT :bnext<CR>
+nnoremap gt :bprev<CR>
