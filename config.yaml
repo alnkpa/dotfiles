@@ -34,3 +34,6 @@ profiles:
     - f_gitconfig
     - f_config_nvim_init.vim
     - f_zshrc
+  zadash:
+    dotfiles:
+    - ALL
