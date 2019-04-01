@@ -13,6 +13,10 @@ config:
   longkey: true
   workdir: ~/.config/dotdrop
 dotfiles:
+  f_config_nvim_coc-settings.json:
+    dst: ~/.config/nvim/coc-settings.json
+    link: true
+    src: config/nvim/coc-settings.json
   f_config_nvim_init.vim:
     actions:
     - vim-plug-install
@@ -20,6 +24,10 @@ dotfiles:
     dst: ~/.config/nvim/init.vim
     link: true
     src: config/nvim/init.vim
+  f_config_nvim_settings.json:
+    dst: ~/.config/nvim/settings.json
+    link: true
+    src: config/nvim/settings.json
   f_gitconfig:
     dst: ~/.gitconfig
     link: true
@@ -34,6 +42,8 @@ profiles:
     - f_gitconfig
     - f_config_nvim_init.vim
     - f_zshrc
+    - f_config_nvim_settings.json
+    - f_config_nvim_coc-settings.json
   zadash:
     dotfiles:
     - ALL
