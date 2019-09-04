@@ -13,6 +13,10 @@ config:
   longkey: true
   workdir: ~/.config/dotdrop
 dotfiles:
+  f__config_i3_config:
+    dst: ~/.config/i3/config
+    link: true
+    src: config/i3/config
   f_config_nvim_coc-settings.json:
     dst: ~/.config/nvim/coc-settings.json
     link: true
@@ -44,6 +48,7 @@ profiles:
     - f_zshrc
     - f_config_nvim_settings.json
     - f_config_nvim_coc-settings.json
+    - f__config_i3_config
   zadash:
     dotfiles:
     - ALL
